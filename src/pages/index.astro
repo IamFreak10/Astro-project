@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from "../data/site";
+
+---
+
+<BaseLayout title="Home">	
+	<section class="hero">
+		<h1>Hi, Iam {site.name}</h1>
+		<p class="muted">{site.bio}</p>
+			{site.openTowork && <span class="tag"> Open to work</span>}
+		<ul class="socials">
+			{
+				site.socials.map((social) => (
+					<li>
+						<a href={social.url}>{social.label}</a>
+					</li>
+				))
+			}
+		</ul>
+		<a href="/blog" class="btn"> Read My Blog</a>
+	
+	</section>
+		
+
+
+</BaseLayout>
